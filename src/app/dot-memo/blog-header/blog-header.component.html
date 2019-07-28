@@ -1,0 +1,16 @@
+<header class="shadow border-bottom bg-downriver d-flex justify-content-between align-items-center p-20px">
+    <a routerLink="/" (click)="scrollToTop()">
+        <img height="30px"
+             src="../../../assets/code.memo.svg">
+    </a>
+    <ng-container *ngIf="isAdmin$ | async; else anonymous">
+        <a routerLink="/admin" style="color: white">
+            管理画面
+        </a>
+    </ng-container>
+    <ng-template #anonymous>
+        <a href="https://twitter.com/cojicoj67044353" target="_blank" style="color: white">
+            ブログ運営者
+        </a>
+    </ng-template>
+</header>

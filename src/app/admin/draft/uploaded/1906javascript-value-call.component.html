@@ -1,0 +1,42 @@
+<p>Javascriptの値渡し、参照渡しについては、以下のように考えると整理されます。</p>
+<ul>
+    <li>Javascriptはいつも値渡し</li>
+    <li>object型の場合は、objectへの参照値を値渡しする</li>
+    <li>変数がobjectを参照している場合、プロパティーの変更は参照先のオブジェクトを変更する。</li>
+</ul>
+<h2>Object型とは</h2>
+<p>Primitive型以外はObejct型です。</p>
+<p>Array, Function なども全てObject型です</p>
+<h2>Primitive型とは</h2>
+<p>以下のタイプがPrimitiveです。</p>
+<p>大雑把には、数字と文字とnull系と覚えておけば良いでしょう。</p>
+<ul>
+    <li>Boolean</li>
+    <li>Null</li>
+    <li>Undefined</li>
+    <li>Number</li>
+    <li>BigInt</li>
+    <li>String</li>
+    <li>Symbol</li>
+</ul>
+<h2>例</h2>
+<div style="height:150px; padding:30px;">
+    <app-ace-highlight mode='javascript'
+                       value="//primitive型の例
+let a = 'abc'; //primitive型を渡す
+a[0] = 'd';
+console.log(a); // => 'abc'. primitive型は値渡しで、かつ変更されない。"></app-ace-highlight>
+</div>
+
+<div style="height:220px; padding:30px;">
+    <app-ace-highlight mode='javascript'
+                       value="//object型の例
+let b = {hoge: 'fuga'}
+let a = b
+a.foo = 'bar'
+console.log(b) // => {hoge: 'fuga', foo: 'bar'} . 参照しているobjectのプロパティーは書き換わる.
+a = {hoge: 'gafu'}
+console.log(a) // => {hoge: 'gafu'}. aが参照している値は別のobjectに書き換わる。
+console.log(b) // => {hoge: 'fuga'}. bへ影響を受けない
+"></app-ace-highlight>
+</div>

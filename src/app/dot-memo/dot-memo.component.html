@@ -1,0 +1,11 @@
+<div>
+    <app-animated-sticky-header>
+        <app-blog-header></app-blog-header>
+    </app-animated-sticky-header>
+    <div class="d-flex">
+        <div [@animation]="prepareRoute(outlet)" class="mx-auto flex-grow-1 position-relative pt-50px"
+             style="max-width: 1200px">
+            <router-outlet #outlet=outlet></router-outlet>
+        </div>
+    </div>
+</div>

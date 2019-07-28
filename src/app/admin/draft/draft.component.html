@@ -1,0 +1,26 @@
+<h1>KubernetesのLabelとSelector</h1>
+<h2>Labelとは？</h2>
+<p>
+    Kubernetesのオブジェクトに付与されるKey/valueペアで、オブジェクトを識別するために付与されるものです。
+    Labelはそれ自体で機能を持つものではなく、識別のためにカテゴリーを付与するのに近いものです。
+</p>
+<p><code>metadata.labels</code>の例</p>
+<app-ace-highlight mode="yaml" value="
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: backend-service
+  labels:
+    app: express
+    release: stable
+    environment: dev
+    tier: backend
+"></app-ace-highlight>
+<h2>Labelとnameの違い</h2>
+<p>
+    nameも同じようにオブジェクトを特定するために使われますが、nameはオブジェクトをユニークに指定するのに対して、
+    labelはオブジェクトをユニークに指定するものではありません。
+    labelはカテゴリーのように、一定の属性軍を持つものを指定したい場合に使います。
+</p>
+<h2>Label selectors</h2>
+<p></p>

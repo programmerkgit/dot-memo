@@ -1,0 +1,17 @@
+<h2>Deployment</h2>
+spec.template => definition of pods
+spec.template.metadata => definition of pod header
+spec.template.spec => definition of pod body
+spec.selector.matchLabels:
+    app: template.metadata.labels.app.value
+containers.name => name of container
+containers.image => docker image
+spec.strategy.type==RollingUpdate
+containers.ports
+    - containerPort: 80 => which port is published inside pod
+<p>exposing type=LoadBalancer create service</p>
+<p>https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0</p>
+
+
+<h2>Volume</h2>
+<p>VolumeのLifecycleはPodと同じなので、永続化しない</p>

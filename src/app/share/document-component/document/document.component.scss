@@ -1,0 +1,38 @@
+.thumbnail-img {
+  max-width: 100%;
+  object-fit: cover;
+  padding-bottom: 50px;
+}
+
+:host ::ng-deep {
+  h1 {
+    font-size: 40px;
+    margin: 0 0 100px 0;
+  }
+
+
+  h2 {
+    border-left: #23b3ff 8px solid;
+    padding: 10px 10px 10px 30px;
+    background-color: #f0f0f0;
+    margin: 40px 0 20px 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    padding-bottom: 50px;
+  }
+
+}
+
+/* p tag design */
+/* コンテンツの図 */
+/* 画像アップロードUIの修正 */

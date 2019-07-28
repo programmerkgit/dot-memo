@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.btn {
+  box-shadow: 0 2px 5px 0 black;
+  border-radius: 5px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+@import "ec-styles/utils/color_names";
+@import "ec-styles/utils/colors";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
