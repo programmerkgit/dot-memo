@@ -9,7 +9,7 @@ import { ApiModeledService } from './api-modeled-service';
 export class DocumentService extends ApiModeledService<Document> {
 
     model = Document;
-    protected _basePath = 'documents';
+    protected basePath = 'documents';
 
     constructor(
         protected httpClient: HttpClient

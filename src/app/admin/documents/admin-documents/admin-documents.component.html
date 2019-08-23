@@ -1,24 +1,18 @@
-<ng-container *ngIf="documents$ | async as documents">
-    <div class="mb-50px">
-        <h2>全て</h2>
-        <div class="d-flex flex-wrap">
-            <ng-container *ngFor="let document of documents">
-                <div class="panel">
-                    <app-admin-document-panel [document]="document"></app-admin-document-panel>
-                </div>
-            </ng-container>
-        </div>
-    </div>
-</ng-container>
+<div class="d-flex">
+    <button class="px-30px" (click)="show=true">公開</button>
+    <button class="px-30px" (click)="show=false">非公開</button>
+</div>
 
 <ng-container *ngIf="blogs$ |async as documents">
     <div class="mb-50px">
         <h2>blogs</h2>
         <div class="d-flex flex-wrap">
             <ng-container *ngFor="let document of documents">
-                <div class="panel">
-                    <app-admin-document-panel [document]="document"></app-admin-document-panel>
-                </div>
+                <ng-container *ngIf="document.show === show">
+                    <div class="panel">
+                        <app-admin-document-panel [document]="document"></app-admin-document-panel>
+                    </div>
+                </ng-container>
             </ng-container>
         </div>
     </div>
@@ -28,9 +22,40 @@
         <h2>simple</h2>
         <div class="d-flex flex-wrap">
             <ng-container *ngFor="let document of documents">
-                <div class="panel">
-                    <app-admin-document-panel [document]="document"></app-admin-document-panel>
-                </div>
+                <ng-container *ngIf="document.show === show">
+                    <div class="panel">
+                        <app-admin-document-panel [document]="document"></app-admin-document-panel>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="memos$ |async as documents">
+    <div class="mb-50px">
+        <h2>memo</h2>
+        <div class="d-flex flex-wrap">
+            <ng-container *ngFor="let document of documents">
+                <ng-container *ngIf="document.show === show">
+                    <div class="panel">
+                        <app-admin-document-panel [document]="document"></app-admin-document-panel>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="documents$ |async as documents">
+    <div class="mb-50px">
+        <h2>全て</h2>
+        <div class="d-flex flex-wrap">
+            <ng-container *ngFor="let document of documents">
+                <ng-container *ngIf="document.show === show">
+                    <div class="panel">
+                        <app-admin-document-panel [document]="document"></app-admin-document-panel>
+                    </div>
+                </ng-container>
             </ng-container>
         </div>
     </div>

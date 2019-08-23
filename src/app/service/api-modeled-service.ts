@@ -23,7 +23,7 @@ export abstract class ApiModeledService<T> {
     abstract model;
 
     /* Example api/users. Dont start with slash like '/api' */
-    protected abstract _basePath: string;
+    protected abstract basePath: string;
 
     protected constructor(
         protected httpClient: HttpClient,
@@ -31,7 +31,7 @@ export abstract class ApiModeledService<T> {
     }
 
     private get baseUrl() {
-        return [ config.apiBase, this._basePath ].join('/');
+        return [ config.apiBase, this.basePath ].join('/');
     };
 
     /* C */

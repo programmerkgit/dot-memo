@@ -18,6 +18,9 @@ export class AdminDocumentsComponent implements OnInit {
 
     simples$: Observable<Document[]>;
     blogs$: Observable<Document[]>;
+    memos$: Observable<Document[]>;
+
+    show: boolean = true;
 
     constructor(
         private documentService: DocumentService
@@ -37,6 +40,7 @@ export class AdminDocumentsComponent implements OnInit {
                 const grouped = _.groupBy(documents, 'type');
                 this.blogs$ = of(grouped.blog);
                 this.simples$ = of(grouped.simple);
+                this.memos$ = of(grouped.memo);
             })
         );
     }

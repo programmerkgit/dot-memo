@@ -83,7 +83,7 @@ const animation =
     selector: 'app-dot-memo',
     templateUrl: './dot-memo.component.html',
     styleUrls: [ './dot-memo.component.scss' ],
-    animations: [ animation ]
+    animations: []
 })
 export class DotMemoComponent implements OnInit, OnDestroy {
 
