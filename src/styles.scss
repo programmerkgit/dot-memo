@@ -8,8 +8,34 @@
 }
 
 
-@import "ec-styles/utils/color_names";
-@import "ec-styles/utils/colors";
+@import "assets/bootstrap-4.3.1/scss/bootstrap-reboot";
+@import "assets/bootstrap-4.3.1/scss/bootstrap-grid";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "assets/color-variables";
+@import "assets/color-classes";
+
+
+/* default colors */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/* bg-color  */
+
+$primary: #0a1a40;
+
+.bg-primary {
+  background-color: $primary;
+}
+
+
+/* container */
+.memo-container {
+  max-width: 800px;
+}

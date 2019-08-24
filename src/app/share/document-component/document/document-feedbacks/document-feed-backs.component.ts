@@ -19,9 +19,9 @@ export class DocumentFeedBacksComponent implements OnInit {
     @Input() documentId: string;
     subscription: Subscription;
     counts: { [P in FeedBackType]: number } = {
-        'useful': 0,
-        'reliable': 0,
-        'like': 0
+        useful: 0,
+        reliable: 0,
+        like: 0
     };
     height = 18;
     width = 18;
@@ -42,7 +42,7 @@ export class DocumentFeedBacksComponent implements OnInit {
     ngOnInit() {
         this.documentService.findById(this.documentId, {scopes: [ 'usefulFeedBacks', 'reliableFeedBacks', 'likeFeedBacks' ]}).pipe(
             tap(document => {
-                this.counts[ 'useful' ] = document.countFeedBacks('useful');
+                this.counts.useful = document.countFeedBacks('useful');
                 this.counts[ 'reliable' ] = document.countFeedBacks('reliable');
                 this.counts[ 'like' ] = document.countFeedBacks('like');
             }),

@@ -17,39 +17,40 @@ import { ShareModule } from './share/share.module';
 import { AceHighlightComponent } from './share/ace-highlight/ace-highlight.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    /* Basic Modules */
-    BrowserModule,
-    /* App Routing */
-    AppRoutingModule,
-    /*Firebase*/
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule,
-    /* Modules */
-    IconShareModule,
-    DotMemoModule,
-    HttpClientModule,
-    SiteModule,
-    BrowserAnimationsModule,
-    ShareModule
-  ],
-  providers: [],
-  exports: [
-    UsefulComponent
-  ],
-  bootstrap: [
-    AppComponent
-  ],
-  entryComponents: [
-    DragDemoComponent,
-    AceHighlightComponent,
-  ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        /* Basic Modules */
+        BrowserModule,
+        BrowserAnimationsModule,
+        /* App Routing */
+        AppRoutingModule,
+        /*Firebase*/
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireStorageModule,
+        /* Modules */
+        IconShareModule,
+        DotMemoModule,
+        HttpClientModule,
+        SiteModule,
+        BrowserAnimationsModule,
+        ShareModule
+    ],
+    providers: [],
+    exports: [
+        UsefulComponent
+    ],
+    bootstrap: [
+        AppComponent
+    ],
+    entryComponents: [
+        DragDemoComponent,
+        AceHighlightComponent,
+    ],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+    ]
 })
 export class AppModule {
 }

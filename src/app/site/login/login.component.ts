@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiAuthService } from '../../service/api-auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login',
@@ -14,8 +15,13 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private apiAuthService: ApiAuthService
+        private apiAuthService: ApiAuthService,
+        private router: Router
     ) {
+    }
+
+    redirectToAdmin() {
+        return this.router.navigateByUrl('admin');
     }
 
     ngOnInit() {
@@ -26,10 +32,21 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
+        /*login and redirect*/
         const values = this.formGroup.getRawValue();
         this.apiAuthService.login(values).subscribe(data => {
-            alert(data.result);
+            if (data.result) {
+                this.redirectToAdmin().catch(err => {
+                    this.handleError(err);
+                });
+            }
+        }, error => {
+            this.handleError(error);
         });
+    }
+
+    handleError(err) {
+        alert(err);
     }
 
     login(values: { email: string, password: string }) {

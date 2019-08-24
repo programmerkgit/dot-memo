@@ -5,6 +5,7 @@ import { DocumentFeedBacksComponent } from './document/document-feedbacks/docume
 import { IconShareModule } from '../icon-share.module';
 import { NgMatShareModule } from '../ng-mat-share.module';
 import { AnimatedStickyHeaderComponent } from '../animated-sticky-header/animated-sticky-header.component';
+import { MatTooltipModule } from '@angular/material';
 
 const shareModule = [
     DocumentComponent,
@@ -19,7 +20,7 @@ const shareModule = [
     imports: [
         CommonModule,
         IconShareModule,
-        NgMatShareModule
+        MatTooltipModule
     ],
     exports: [
         ...shareModule

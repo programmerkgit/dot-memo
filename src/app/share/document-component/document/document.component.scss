@@ -1,34 +1,58 @@
 .thumbnail-img {
   max-width: 100%;
   object-fit: cover;
-  padding-bottom: 50px;
+  padding-bottom: 2rem;
 }
 
-:host ::ng-deep {
-  h1 {
-    font-size: 40px;
-    margin: 0 0 100px 0;
-  }
+h1 {
+  font-size: 2.5rem;
+  margin: 2.5rem 0rem;
+}
 
+.memo-document ::ng-deep {
+
+  h2, h3, h4, h5, h6 {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+  }
 
   h2 {
+    &::first-letter {
+      font-size: 2rem;
+      color: #23b3ff; /*primary*/
+    }
+
+    padding: 0.5rem;
     border-left: #23b3ff 8px solid;
-    padding: 10px 10px 10px 30px;
+    font-size: 1.5rem;
+
     background-color: #f0f0f0;
-    margin: 40px 0 20px 0;
   }
 
-  p {
-    font-size: 16px;
-    line-height: 22px;
-    padding-bottom: 16px;
+  h3 {
+    &::before {
+      content: '◆';
+      margin-right: 0.5rem;
+      color: #23b3ff;
+      font-size: 2rem;
+    }
+
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
   }
 
   img {
     max-width: 100%;
-    margin: auto;
+    margin: 1.5rem auto;
     object-fit: cover;
-    padding-bottom: 50px;
   }
 
 }
