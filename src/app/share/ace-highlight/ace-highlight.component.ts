@@ -3,13 +3,17 @@ import { AceMode, AceTheme } from './ace-mode';
 
 const ace = require('brace');
 require('brace/ext/static_highlight');
+
 require(`brace/mode/javascript`);
 require(`brace/mode/sh`);
 require(`brace/mode/html`);
+require(`brace/mode/golang`);
 require(`brace/mode/yaml`);
 require(`brace/mode/typescript`);
+
 require(`brace/theme/dawn`);
 require(`brace/theme/textmate`);
+
 require(`brace/theme/terminal`);
 require(`brace/theme/xcode`);
 require(`brace/theme/twilight`);

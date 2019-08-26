@@ -1,5 +1,10 @@
-<div class="p-4r">
-    <h1>{{document?.title}}</h1>
+<div class="p-4r document-container">
+    <header>
+        <nav *ngIf="isAdmin$() | async as result">
+            <a routerLink="/admin/documents/{{document.id}}">編集</a>
+        </nav>
+        <h1>{{document?.title}}</h1>
+    </header>
     <div *ngIf="document.thumbnailUrl" class="d-flex justify-content-center mb-50px">
         <img class="thumbnail-img"
              [src]="document.thumbnailUrl">

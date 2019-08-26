@@ -23,7 +23,11 @@ export class CategoryEditComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.paramMap.subscribe(param => {
             const id = param.get('id');
-            this.category$ = this.categoryServiceService.findById(id);
+            if (id) {
+                this.category$ = this.categoryServiceService.findById(id);
+            } else {
+                /*error handle*/
+            }
         });
     }
 

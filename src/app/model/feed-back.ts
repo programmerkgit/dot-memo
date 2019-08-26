@@ -29,7 +29,7 @@ export class FeedBack implements FeedBackParams {
     updatedAt?: Date;
     createdAt?: Date;
 
-    constructor(values?: FeedBackParams) {
+    constructor(values: FeedBackParams = {}) {
         Object.keys(values).forEach(key => {
             this[ key ] = values[ key ];
         });

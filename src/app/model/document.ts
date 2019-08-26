@@ -31,13 +31,13 @@ export class Document extends Model<Document> {
         let count: number;
         switch (type) {
             case 'useful':
-                count = this._countFeedBacks(this.usefulFeedBacks);
+                count = this._countFeedBacks(this.usefulFeedBacks || []);
                 break;
             case 'reliable':
-                count = this._countFeedBacks(this.reliableFeedBacks);
+                count = this._countFeedBacks(this.reliableFeedBacks || []);
                 break;
             case 'like':
-                count = this._countFeedBacks(this.likeFeedBacks);
+                count = this._countFeedBacks(this.likeFeedBacks || []);
                 break;
             default:
                 throw new TypeError(`Unexpected type ${ type }`);
@@ -47,7 +47,11 @@ export class Document extends Model<Document> {
 
     private _countFeedBacks(feedBacks: FeedBack[]): number {
         return feedBacks.reduce((count, feedBack) => {
-            return count + feedBack.value;
+            if (feedBack) {
+                return count + feedBack.value as number;
+            } else {
+                return count;
+            }
         }, 0);
     }
 }

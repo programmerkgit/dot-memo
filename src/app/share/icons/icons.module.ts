@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsefulComponent } from './icons/useful/useful.component';
-import { UpComponent } from './icons/up/up.component';
-import { DownComponent } from './icons/down/down.component';
-import { LikeComponent } from './icons/like/like.component';
-import { ReliableComponent } from './icons/reliable/reliable.component';
+import { UsefulComponent } from './useful/useful.component';
+import { UpComponent } from './up/up.component';
+import { DownComponent } from './down/down.component';
+import { LikeComponent } from './like/like.component';
+import { ReliableComponent } from './reliable/reliable.component';
 
 @NgModule({
     declarations: [
@@ -25,5 +25,5 @@ import { ReliableComponent } from './icons/reliable/reliable.component';
         ReliableComponent
     ]
 })
-export class IconShareModule {
+export class IconsModule {
 }

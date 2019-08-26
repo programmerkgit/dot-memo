@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FeedBackService } from '../../../../service/feed-back.service';
-import { FeedBack, FeedBackType } from '../../../../model/feed-back';
-import { DocumentService } from '../../../../service/document.service';
+import { FeedBackService } from '../../../service/feed-back.service';
+import { FeedBack, FeedBackType } from '../../../model/feed-back';
+import { DocumentService } from '../../../service/document.service';
 import { tap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
-import { ApiAuthService } from '../../../../service/api-auth.service';
+import { ApiAuthService } from '../../../service/api-auth.service';
 
 @Component({
     selector: 'app-document-feed-backs',

@@ -43,7 +43,7 @@ export type AceMode =
     // 'gitignore' |
     // 'glsl' |
     // 'gobstones' |
-    // 'golang' |
+    'golang' |
     // 'graphqlschema' |
     // 'groovy' |
     // 'haml' |

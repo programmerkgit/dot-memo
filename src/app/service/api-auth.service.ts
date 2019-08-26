@@ -27,6 +27,18 @@ export class ApiAuthService {
         this.user$ = this.userSubject.asObservable();
     }
 
+    isAdmin(): Observable<boolean> {
+        return this.user$.pipe(
+            map(user => {
+                if (user) {
+                    return user.isAdmin();
+                } else {
+                    return false;
+                }
+            })
+        );
+    }
+
     emitUser(user: User) {
         this.user = user;
         this.userSubject.next(user);

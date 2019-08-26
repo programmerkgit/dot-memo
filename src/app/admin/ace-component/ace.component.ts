@@ -3,12 +3,11 @@ import * as AceAjax from 'brace';
 import { Editor } from 'brace';
 import { AceMode, AceTheme } from '../../share/ace-highlight/ace-mode';
 
-
 const brace = require('brace');
 
 
 @Component({
-    selector: 'ace-editor',
+    selector: 'app-ace-editor',
     templateUrl: './ace.component.html',
     styleUrls: [ './ace.component.css' ]
 })

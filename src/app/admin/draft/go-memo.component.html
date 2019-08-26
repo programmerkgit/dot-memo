@@ -1,0 +1,47 @@
+<h2>control flow</h2>
+<p>Explanation of control flow</p>
+<ul>
+    <li>if</li>
+    <li>for</li>
+    <li>switch</li>
+    <li>goto</li>
+    <li>defer</li>
+    <li>panic</li>
+    <li>recover</li>
+</ul>
+<h2>defer statement</h2>
+<p>
+    <b>defer statement</b>pushed function call onto a list.
+    The list of saved calls is executed after surrounding function returns.
+</p>
+<h3>when defer statement is used</h3>
+<p>defer statement is used to simplify functions that perform various clean-up actions.</p>
+
+<h2>Rules of deferred function</h2>
+<h3>1.A deferred function's arguments are evaluated when call is deferred.</h3>
+<p>Following Example prints 0.</p>
+<app-ace-highlight mode="golang"
+                   value="func a() {
+    i := 0;
+    defer fmt.Println(i)
+    i++
+    return
+}">
+</app-ace-highlight>
+<h3>2. Deferred function calls are executed in Last In First Out order after the surrounding function returns</h3>
+<app-ace-highlight mode="golang"
+                   value="func b() {
+    for i := 0; i < 4; i++ {
+        defer fmt.Println(i)
+    }
+}">
+</app-ace-highlight>
+<h3>3. Deferred functions may read and assign to the returning function's named return values.</h3>
+<p>In this example, a deferred function increments the return value i after the surrounding function returns.</p>
+<p>Example below returns 2.</p>
+<app-ace-highlight mode="golang"
+                   value="func c() (i int) {
+    defer i++
+    return 1
+}">
+</app-ace-highlight>

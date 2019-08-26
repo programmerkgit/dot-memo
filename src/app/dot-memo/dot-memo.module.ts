@@ -7,9 +7,11 @@ import { DotMemoComponent } from './dot-memo.component';
 import { DocumentRoutedComponent } from './document-routed/document-routed.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { DocumentPanelComponent } from './document-panel/document-panel.component';
-import { IconShareModule } from '../share/icon-share.module';
-import { DocumentComponentModule } from '../share/document-component/document-component.module';
+import { IconsModule } from '../share/icons/icons.module';
+import { DocumentModule } from './document/document.module';
 import { DocuemntPanelSimpleComponent } from './docuemnt-panel-simple/docuemnt-panel-simple.component';
+import { RouterModule } from '@angular/router';
+import { AnimatedStickyHeaderModule } from '../share/animated-sticky-header/animated-sticky-header.module';
 
 @NgModule({
     declarations: [
@@ -23,9 +25,11 @@ import { DocuemntPanelSimpleComponent } from './docuemnt-panel-simple/docuemnt-p
     imports: [
         CommonModule,
         DotMemoRoutingModule,
+        RouterModule,
         /* share */
-        DocumentComponentModule,
-        IconShareModule
+        AnimatedStickyHeaderModule,
+        DocumentModule,
+        IconsModule
     ],
     exports: [
         BlogHeaderComponent

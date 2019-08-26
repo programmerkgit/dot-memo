@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DocumentNewComponent } from './documents/document-new/document-new.component';
-import { AdminDocumentsComponent } from './documents/admin-documents/admin-documents.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { DraftComponent } from './draft/draft.component';
 import { CategoryNewComponent } from './categories/category-new/category-new.component';
 import { CategoryListComponent } from './categories/category-list/category-list.component';
 import { CategoryEditComponent } from './categories/category-edit/category-edit.component';
+import { AdminDocumentsComponent } from './documents/admin-documents/admin-documents.component';
 
 const routes: Routes = [
     {

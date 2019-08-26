@@ -10,11 +10,12 @@ import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SiteModule } from './site/site.module';
 import { UsefulComponent } from './share/icons/useful/useful.component';
-import { IconShareModule } from './share/icon-share.module';
+import { IconsModule } from './share/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDemoComponent } from './share/drag/drag-demo.component';
-import { ShareModule } from './share/share.module';
 import { AceHighlightComponent } from './share/ace-highlight/ace-highlight.component';
+import { AceHighlightModule } from './share/ace-highlight/ace-highlight.module';
+import { DragDemoModule } from './share/drag/drag-demo.module';
 
 @NgModule({
     declarations: [
@@ -30,12 +31,13 @@ import { AceHighlightComponent } from './share/ace-highlight/ace-highlight.compo
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireStorageModule,
         /* Modules */
-        IconShareModule,
+        IconsModule,
         DotMemoModule,
         HttpClientModule,
         SiteModule,
         BrowserAnimationsModule,
-        ShareModule
+        AceHighlightModule,
+        DragDemoModule
     ],
     providers: [],
     exports: [
