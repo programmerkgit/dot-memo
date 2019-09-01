@@ -16,12 +16,14 @@ import { DragDemoComponent } from './share/drag/drag-demo.component';
 import { AceHighlightComponent } from './share/ace-highlight/ace-highlight.component';
 import { AceHighlightModule } from './share/ace-highlight/ace-highlight.module';
 import { DragDemoModule } from './share/drag/drag-demo.module';
+import { TestModule } from './test/test.module';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
+        TestModule,
         /* Basic Modules */
         BrowserModule,
         BrowserAnimationsModule,

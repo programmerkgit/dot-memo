@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CodeBlogComponent } from './code-blog.component';
+import { DotDragDropComponent } from './dot-drag-drop.component';
 
-describe('CodeBlogComponent', () => {
-  let component: CodeBlogComponent;
-  let fixture: ComponentFixture<CodeBlogComponent>;
+describe('DragDropComponent', () => {
+  let component: DotDragDropComponent;
+  let fixture: ComponentFixture<DotDragDropComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CodeBlogComponent ]
+      declarations: [ DotDragDropComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CodeBlogComponent);
+    fixture = TestBed.createComponent(DotDragDropComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

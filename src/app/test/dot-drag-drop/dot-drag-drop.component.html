@@ -1,0 +1,54 @@
+<div cdkDrag style="padding: 100px; background-color: yellow; color: blue; display: inline-block">
+    cdkDrag: enable draggable
+</div>
+
+
+<div (cdkDropListDropped)="drop($event)" cdkDropList
+     style="background-color: #9ff536" class="example-list">
+    <p>cdkDropList: cdkDrag要素の範囲を制限</p>
+    <ul>
+        <li>.cdk-drag-placeholder</li>
+        <li>.cdk-drag-animating</li>
+        <li>.example-list.cdk-drop-list-dragging</li>
+        <li>{{".example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {\n" +
+        "  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);\n" +
+        "}"}}</li>
+        <li>draggingじゃないlistの内側のboxにアニメーションを当ててしまうと変な挙動する</li>
+    </ul>
+    <p>
+        <code>
+            <pre>{{".cdk-drag-placeholder {\n" +
+            "                opacity: 0;\n" +
+            "}"}}</pre>
+        </code>
+    </p>
+    <div class="example-box" *ngFor="let item of lists" cdkDrag
+         style="padding: 20px; background-color: yellow">
+        {{item}}
+    </div>
+</div>
+
+
+<div cdkDropList>
+    <div #todoList="cdkDropList" class="example-list"
+         [cdkDropListData]="todos"
+         cdkDropList [cdkDropListConnectedTo]="doneList"
+         (cdkDropListDropped)="dropTodo($event)">
+        <div cdkDrag class="example-box" *ngFor="let todo of todos">
+            {{todo}}
+        </div>
+    </div>
+    <div #doneList="cdkDropList" cdkDropList [cdkDropListData]="dones" [cdkDropListConnectedTo]="todoList"
+         (cdkDropListDropped)="dropTodo($event)">
+        <div cdkDrag class="example-box" [cdkDragData]="done" *ngFor="let done of dones" (cdkDragDropped)="data($event)">
+            {{done}}
+        </div>
+    </div>
+</div>
+<div>
+<pre>
+    {{"cdkDropListGroup\n" +
+"        cdkDropList=list cdkDroppListDropped=drop($event.container.data)\n" +
+"            cdkDragData=item => cdkDragDropped($event.item.data)"}}
+</pre>
+</div>

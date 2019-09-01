@@ -1,0 +1,37 @@
+<h1>Locking Script</h1>
+<p>アリスがボブのアドレスにビットコインを送金すると、そのビットコインには解除条件が与えられます。</p>
+<p>その解除条件とは、<b>「ボブのアドレスに対応した秘密鍵で生成した電子署名を提示した人のみがBTCコインを使用できる」</b>というものです。</p>
+<p>この解除条件を<b>Locking Script<sup>*</sup></b>と言います。</p>
+<p>Locking Scriptは「Script」という言語で書かれており、様々な形式の解除条件を記述することができます。</p>
+<p>現在一番一般的なものが<b>P2PKH(Pay to Public Key Hash)</b>*というScriptで、上記のようにアドレスに対応した秘密鍵で解除出来るものです。</p>
+<small>
+    <p>*他にもP2SH(Pay to Script Hash)という、任意のScriptを埋め込むことが出来る形式もあります。</p>
+</small>
+
+
+<h1>Locking Scriptとは</h1>
+<p>トランザクションアウトプットをLockするスクリプト</p>
+<p>「ボブの秘密鍵に対応した電子署名を提示した人のみがビットコインを使用できます」という意味を持つ</p>
+<p></p>
+
+<ul>
+    <li>What Is Locking script: 解除条件となるスクリプト</li>
+    <li></li>
+    <li>インプットに含まれている</li>
+    <li>unlocking scriptが解除条件</li>
+    <li>
+        Script言語でできている
+        <ul>
+            <li>逆ポーランド記法で記述</li>
+            <li>
+                Execution of locking script: learn later
+                <ul>
+                    <li>exec unlocking script</li>
+                    <li>copy stack of unlocking script</li>
+                    <li>exec locking script with stack with data copied</li>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

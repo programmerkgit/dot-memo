@@ -12,10 +12,10 @@ import { DocumentModule } from './document/document.module';
 import { DocuemntPanelSimpleComponent } from './docuemnt-panel-simple/docuemnt-panel-simple.component';
 import { RouterModule } from '@angular/router';
 import { AnimatedStickyHeaderModule } from '../share/animated-sticky-header/animated-sticky-header.module';
+import { BlogHeaderModule } from './blog-header/blog-header.module';
 
 @NgModule({
     declarations: [
-        BlogHeaderComponent,
         DotMemoComponent,
         DocumentRoutedComponent,
         DocumentsComponent,
@@ -23,6 +23,7 @@ import { AnimatedStickyHeaderModule } from '../share/animated-sticky-header/anim
         DocuemntPanelSimpleComponent
     ],
     imports: [
+        BlogHeaderModule,
         CommonModule,
         DotMemoRoutingModule,
         RouterModule,

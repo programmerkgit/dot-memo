@@ -3,8 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DotMemoComponent } from './dot-memo.component';
 import { DocumentRoutedComponent } from './document-routed/document-routed.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { TestComponent } from '../test/test.component';
 
 const routes: Routes = [
+    {
+        path: 'test', component: TestComponent
+    },
     {
         path: 'documents', component: DotMemoComponent,
         children: [
