@@ -3,7 +3,7 @@
         <img height="30px"
              src="../../../assets/code.memo.svg">
     </a>
-    <ng-container *ngIf="isAdmin$">
+    <ng-container *ngIf="isAdmin$ | async">
         <a routerLink="/test" style="color: white">
             test
         </a>
